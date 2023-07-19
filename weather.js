@@ -1,6 +1,10 @@
 const select = document.querySelector("select");
 const para = document.querySelector("p");
 const background = document.querySelector(".container");
+const hrs = document.querySelector(".hrs");
+const mints = document.querySelector(".mints");
+const sec = document.querySelector(".sec");
+const messege = document.querySelector(".messege")
 
 
 
@@ -34,12 +38,25 @@ function setWeather() {
 
 
 
-    setInterval(()=>{
-        let hrs = document.querySelector(".hrs");
-        let mints = document.querySelector(".mints");
-        let sec = document.querySelector(".sec");
+    setInterval(()=> {
 
         let currentTime = new Date();
+
+        // let currentHour = currentTime.getHours();
+        let currentHour = currentTime.getHours();
+        // console.log(currentHour);
+
+        if (currentHour < 12) {
+          messege.innerHTML = "Good Morning"
+        } else if (currentHour >= 12 && currentHour < 16){
+          messege.innerHTML = "Good Afternoon"
+          // console.log(currentHour)
+        } else if (currentHour >= 16 && currentHour < 19){
+          messege.innerHTML = "Good Evening"
+        } else {
+          messege.innerHTML = "Good Night"
+        }
+
 
             // console.log(currentTime.getHours());  // for getting exect time 
             // console.log(currentTime.getMinutes());
@@ -48,10 +65,8 @@ function setWeather() {
         hrs.innerHTML = currentTime.getHours();
         mints.innerHTML = currentTime.getMinutes();
         sec.innerHTML = currentTime.getSeconds();
-    
-    });
-
-
+      
+  });  
 
 
 
