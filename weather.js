@@ -4,7 +4,39 @@ const background = document.querySelector(".container");
 const hrs = document.querySelector(".hrs");
 const mints = document.querySelector(".mints");
 const sec = document.querySelector(".sec");
-const messege = document.querySelector(".messege")
+const messege = document.querySelector(".messege");
+const city = document.querySelector("#searchcity");
+const btn = document.querySelector("#searchbtn");
+const cityInfo = document.querySelector("#cityinfo");
+const humidityInfo = document.querySelector("#humidity");
+const errorInfo = document.querySelector("#errormessege")
+
+function getCapitalizedString(value){
+  const fristLetter = value.charAt(0).toUpperCase();
+  const secondPart = value.slice(1);
+  return fristLetter + secondPart;
+}
+
+
+async function updateWeatherDetails() {
+  let cityName = city.value;
+  console.log("currentValue", cityName);
+  
+  if (cityName != ""){
+    const weatherData = await fetchWeather(cityName);
+    if (weatherData.cod == "200"){
+      console.log("weather data", weatherData.main.humidity);
+      cityInfo.innerHTML = `Weather in ${getCapitalizedString(cityName)}`;
+      humidityInfo.innerHTML = `Humidity: ${weatherData.main.humidity}%`;
+    } else {
+      errorInfo.style.display = "block";
+      errorInfo.innerHTML = weatherData.message;
+    }
+  }
+}
+
+btn.addEventListener("click", updateWeatherDetails);
+
 
 
 
@@ -36,8 +68,6 @@ function setWeather() {
 
     select.addEventListener("change", setWeather);
 
-
-
     setInterval(()=> {
 
         let currentTime = new Date();
@@ -68,5 +98,24 @@ function setWeather() {
       
   });  
 
+  
+  let weather = {
+    "apikey": "994dc86781c66a4dbad56161ca0d0dba",
+     Weather: function () {
+      fetch(
+        " https://api.openweathermap.org/data/2.5/weather?q=units=metric&appid=994dc86781c66a4dbad56161ca0d0dba"
+      )
+        .then((response) => response.json())
+        .then((data) => console.log(data));
+    },
+  };
 
-
+async function fetchWeather(cityName){
+  const apiKey = "994dc86781c66a4dbad56161ca0d0dba";
+  const resp = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}`)
+    .then((response) => response.json())
+    .then((data) => data)
+    .catch((err)=> console.error("something went wrong", err));
+  console.log("api response", resp);
+  return resp;
+}
