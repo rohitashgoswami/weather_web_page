@@ -77,12 +77,11 @@ body{
     font-size: 15px;
 }
 
-p{
-    font-size: 18px;
-    color: #fff;
-    font-weight: 700;
-    margin-top: 30px;
-    padding: 10px 100px;
+.clock-box{
+    margin-left: 250px;
+    margin-top: 20px;
+    text-align: center;
+
 }
 
 .clock {
@@ -92,9 +91,7 @@ p{
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    top:30%;
-    left: 55%;
+    border-radius: 10px;
 }
 
 .clock span{
@@ -125,35 +122,110 @@ p{
 }
 
 .clock-box p{
-    position: absolute;
     font-size: 18px;
-    margin-top: -240px;
+    font-weight: 700;
+    color: #fff;
+    margin: 15px 0;
+}
+
+.weather{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* width: 100%; */
+}
+
+.deatils{
+    width: 200px;
+}
+.deatils::after{
+    
+}
+
+.deatils-2{
+    width: 200px;
+    margin-top: 160px;
+    margin-right: 20px;
+    display: grid;
+    text-align: right;
 }
 
 .weather h2{
-    margin-bottom: 20px;
+    margin-bottom: 3px;
     color: #fff;
+    opacity: 0;
+    animation: slideRight .5s ease forwards;
+}
+
+#date{
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+#weathericon{
+    max-width: 30%;
+    height: 100%;
 }
 
 .temp{
     font-size: 38px;
     color: #fff;
-    margin-bottom: 10px;
+    opacity: 0;
+    animation: slideRight .5s ease forwards;
 }
 .discripition{
+    position: relative;
+    /* left: 70%; */
     font-size: 18px;
-    /* color: #fff; */
+    color: #fff;
     margin-bottom: 10px;
+    text-align: center;
+    opacity: 0;
+    animation: slideRight .5s ease forwards;
 }
+
+.verticle{
+    border-left: 1px solid #fff;
+    height: 150px;
+    position: absolute;
+    left: 50%;
+    margin-left: -3px;
+    top: 30px;
+}
+
 .humidity{
+    position: relative;
+    bottom: 90px;
+    /* left: 70%; */
     font-size: 18px;
-    /* color: #fff; */
+    color: #fff;
     margin-bottom: 10px;
+    opacity: 0;
+    animation: slideRight .5s ease forwards;
 }
 .wind{
+    position: relative;
+    bottom: 90px;
     font-size: 18px;
-    /* color: #fff; */
+    color: #fff;
     margin-bottom: 10px;
+    opacity: 0;
+    animation: slideRight .5s ease forwards;
+}
+
+
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
 

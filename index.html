@@ -17,42 +17,35 @@
             <input type="" placeholder="Search" id="searchcity">
             <button class="btn" id="searchbtn"><i class="fa fa-search"></i></button>
         </div>
+
+        <div class="clock-box">
+            <div class="clock">
+                <span class="hrs">00</span>
+                <span>:</span>
+                <span class="mints">00</span>
+                <span>:</span>
+                <span class="sec">00</span>
+            </div>
+            <p class="messege"></p> 
+        </div>
+
         
-        <div class="form">
-            <select name="" id="weather">
-                <option value=""><span>☆☆</span>  Make a choice <span>☆☆</span></option>
-                <option value="sunny"><span>☆☆</span> Sunny <span>☆☆</span></option>
-                <option value="rainy"><span>☆☆</span> Rainy <span>☆☆</span></option>
-                <option value="snowing"><span>☆☆</span> Snowing <span>☆☆</span></option>
-                <option value="overcast"><span>☆☆</span> Overcast <span>☆☆</span></option>
-            </select>
-            <p></p>
 
-            <div class="clock-box">
-                <div class="clock">
-                    <span class="hrs">00</span>
-                    <span>:</span>
-                    <span class="mints">00</span>
-                    <span>:</span>
-                    <span class="sec">00</span>
-                </div>
-                <p class="messege"></p> 
-            </div>
-
-
-            <div class="weather">
+        <div class="weather">
+            <div class="deatils">
                 <h2 style="display: none;" id="errormessege"></h2>
-                <!-- <img src="https://cdn.pixabay.com/photo/2021/03/12/07/23/weather-6088968_960_720.png" alt=""> -->
-                <h2 class="city" id="cityinfo">Weather in</h2>
-                <div class="temp"></div>
-                <div class="discripition"></div>
-                <div class="humidity" id="humidity">Humidirty:</div>
-                <div class="wind">Wind speed:</div>
-
+                <h2 class="city" id="cityinfo"></h2>
+                <p id="date"></p>    
+                <img id="weathericon" src="" alt="">
+                <div class="temp" id="temperature"></div>
+                <div class="discripition" id="description"></div>
             </div>
-
-            <!-- <img class="bg-image" src="https://img.freepik.com/premium-vector/cloudscape-blue-sky-with-clouds-sun-paper-art-style_501557-72.jpg?w=1060" alt=""> -->
-        </div> 
+            <div class="verticle"></div>
+            <div class="deatils-2">
+                <div class="humidity" id="humidity"></div>
+                <div class="wind" id="wind"></div>
+            </div>
+        </div>   
     </div>
     <script src="weather.js"></script>
 </body>
