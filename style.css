@@ -139,8 +139,11 @@ body{
 .deatils{
     width: 200px;
 }
-.deatils::after{
-    
+
+.setweather{
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
 }
 
 .deatils-2{
@@ -148,7 +151,8 @@ body{
     margin-top: 160px;
     margin-right: 20px;
     display: grid;
-    text-align: right;
+    align-items: center;
+    justify-content: center;
 }
 
 .weather h2{
@@ -159,7 +163,6 @@ body{
 }
 
 #date{
-    margin-bottom: 15px;
     color: #fff;
 }
 
@@ -169,18 +172,19 @@ body{
 }
 
 .temp{
-    font-size: 38px;
+    font-size: 28px;
     color: #fff;
+    margin-bottom: 8px;
+    margin-left: 40px;
     opacity: 0;
     animation: slideRight .5s ease forwards;
 }
 .discripition{
     position: relative;
-    /* left: 70%; */
-    font-size: 18px;
+    top: 50px;
+    left: 100px;
+    font-size: 13px;
     color: #fff;
-    margin-bottom: 10px;
-    text-align: center;
     opacity: 0;
     animation: slideRight .5s ease forwards;
 }
