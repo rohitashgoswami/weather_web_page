@@ -12,6 +12,8 @@ const windInfo = document.querySelector("#wind");
 const temperatureInfo = document.querySelector("#temperature");
 // const weatherIcon = document.querySelector("#weathericon");
 const descriptionInfo = document.querySelector("#description")
+const maxTemperature = document.querySelector("#max-temp");
+const minTemperature = document.querySelector("#min-temp");
 
 function getCapitalizedString(value){
   const fristLetter = value.charAt(0).toUpperCase();
@@ -40,12 +42,16 @@ async function updateWeatherDetails() {
       console.log("weather data", weatherData.main.humidity);
       console.log("weather data", weatherData.wind.speed);
       console.log("weather data", weatherData.main.temp);
+      console.log("weather data", weatherData.main.temp_max);
+      console.log("weather data", weatherData.main.temp_min);
       // console.log("weather data", weatherData.weather[1].icon);
       console.log("weather data", weatherData.weather[0].description);
       cityInfo.innerHTML = ` ${getCapitalizedString(cityName)}`;
-      humidityInfo.innerHTML = `${weatherData.main.humidity}% Humidity`;
+      humidityInfo.innerHTML = `${weatherData.main.humidity}% humidity`;
       windInfo.innerHTML = `${weatherData.wind.speed}km/h wind`;
       temperatureInfo.innerHTML = `${(weatherData.main.temp)}°C`;
+      maxTemperature.innerHTML =`${(weatherData.main.temp_max)}° high`;
+      minTemperature.innerHTML =`${(weatherData.main.temp_min)}° low`;
       // weatherIcon.innerHTML = `${weatherData.weather[1].icon}`;
       descriptionInfo.innerHTML = `${weatherData.weather[0].description}`;
     } else {

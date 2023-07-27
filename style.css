@@ -146,16 +146,7 @@ body{
     justify-content: space-between;
 }
 
-.deatils-2{
-    width: 200px;
-    margin-top: 160px;
-    margin-right: 20px;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-}
-
-.weather h2{
+.city{
     margin-bottom: 3px;
     color: #fff;
     opacity: 0;
@@ -198,13 +189,22 @@ body{
     top: 30px;
 }
 
+.deatils-2{
+    width: 200px;
+    margin-top: 160px;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: row;
+    color: #fff;
+    margin-left: 20px;
+}
+
 .humidity{
     position: relative;
-    bottom: 90px;
-    /* left: 70%; */
+    bottom: 100px;
+    margin: 10px 10px;
     font-size: 18px;
-    color: #fff;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     opacity: 0;
     animation: slideRight .5s ease forwards;
 }
@@ -212,10 +212,24 @@ body{
     position: relative;
     bottom: 90px;
     font-size: 18px;
-    color: #fff;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    margin-left: 80px;
     opacity: 0;
     animation: slideRight .5s ease forwards;
+}
+
+.max-temp{
+    position: absolute;
+    bottom: 70px;
+    font-size: 18px;
+    margin-left: 10px;
+    
+}
+.min-temp{
+    position: absolute;
+    font-size: 18px;
+    right: 24px;
+    top: 120px;
 }
 
 
